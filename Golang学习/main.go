@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"unsafe"
 )
 
 // 定义变量
@@ -135,14 +136,78 @@ func main() {
 	//匿名变量 在使用多重赋值时，如果想要忽略某个值，可以使用匿名变量 （anonymous variable）
 	//匿名变量 用一个下划线 _ 表示 ：
 
-	//也就是
-	 var username, _ = getUserinfo()
+	// //也就是
+	//  var username, _ = getUserinfo()
 
-	fmt.Println(username)
-	// 匿名变量之间不存在重复声明  因为匿名变量不占用命名空间，不会分配内容；
+	// fmt.Println(username)
+	// // 匿名变量之间不存在重复声明  因为匿名变量不占用命名空间，不会分配内容；
 
-	var _, age = getUserinfo()
+	// var _, age = getUserinfo()
 
-	fmt.Println(age)
+	// fmt.Println(age)
+
+	//常量
+	// const pi = 3.14159
+
+	// fmt.Println(pi)
+
+	// const (
+	// 	A = "A"
+
+	// 	B = "B"
+	// )
+
+	// fmt.Println(A, B)
+
+	// const (
+	// 	n1 = 100
+	// 	n2
+	// 	n3
+	// )
+
+	// fmt.Println(n1, n2, n3)
+
+	// //const 和iota ，计数器，一起使用
+	// const a = iota
+	// fmt.Println(a)
+
+	// const (
+	// 	n1 = iota
+	// 	n2
+	// 	n3
+	// )
+
+	// fmt.Println(n1, n2, n3)
+
+	// //还可以跳过某个值使用，也就是、
+	// const (s1 = iota
+	// 	_
+	// 	s2
+	// 	s3
+	// )
+
+	// fmt.Println(s1,s2,s3)
+	//iota 可以作为中间插队使用
+	// const(
+	// 	n1 = 2  // 0
+	// 	n2 = 100 //100
+	// 	n3 = iota
+	// 	n4
+	// )
+	// fmt.Println(n1,n2,n3,n4)
+
+	//多个iota 定义在一行
+
+	// const (
+	// 	n1, n2 = iota + 2, iota + 2 // 1 2
+	// 	n3, n4                      // 2 3
+	// 	n5, n6                      // 3 4
+	// )
+	// fmt.Println(n1, n2, n3, n4, n5, n6)
+
+	var a int8 = 36
+
+	fmt.Printf("num = %v 类型 ：%T\n", a, a)
+	fmt.Println(unsafe.Sizeof(a))
 
 }
