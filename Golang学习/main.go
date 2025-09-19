@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"unsafe"
+	"github.com/shopspring/decimal"
 )
 
 // 定义变量
@@ -205,9 +205,80 @@ func main() {
 	// )
 	// fmt.Println(n1, n2, n3, n4, n5, n6)
 
-	var a int8 = 36
+	// var a int8 = 36
 
-	fmt.Printf("num = %v 类型 ：%T\n", a, a)
-	fmt.Println(unsafe.Sizeof(a))
+	// fmt.Printf("num = %v 类型 ：%T\n", a, a)
+	// fmt.Println(unsafe.Sizeof(a))
+
+	// var a int32 = 15
+
+	// fmt.Printf("num=%v 类型：%T\n",a,a)
+	// fmt.Println(unsafe.Sizeof(a))
+
+	// var a1 int32 = 10
+	// var a2 int64 = 21
+
+	// fmt.Println(int64(a1) + a2) // 把a1转换成64位
+
+
+	// var n1 int16 = 130
+
+	// fmt.Println(int8(n1))   // 
+
+
+	//数字字面量语法  %d 表示10进制输出  %b 表示二进制输出
+
+
+	// num := 10
+
+	// fmt.Printf("num=%v  原样输出\n",num)
+
+	// fmt.Printf("num=%d 十进制输出\n",num)   // 10进制输出
+
+	// fmt.Printf("num=%b 二进制输出\n",num)   //二进制输出
+
+	// fmt.Printf("num=%o 八进制输出\n",num) 
+
+	// fmt.Printf("num=%x 十六进制输出\n",num)
+
+	// var a float32 = 3.128765
+
+	// fmt.Printf("a=%v 类型：%T，  %f \n",a,a,a)
+
+	// //若是想要保留2位小数，可以使用%.2f来进行操作；
+
+	// fmt.Printf("a= %.2f\n",a)
+
+	// //Golang 科学计数法表示浮点类型;表示3.14*10的2次方
+	// var f1 float32 = 3.14e2
+
+	// fmt.Printf("f1=%v --- %T",f1,f1)
+
+	// var f2 float32 = 3.14e-2  //表示3.14除以10的2次方
+	// fmt.Printf("f2=%v --- %T",f2,f2)
+
+	//由于会出现浮点数精度丢失的问题，所以会进行下载引入第三方包，
+	// 也就是  "github.com/shopspring/decimal"
+
+	// 这个包需要先进行下载 go get -u github.com/shopspring/decimal
+
+	// 使用加法运算；
+	var num1 float64 = 3.1
+	var num2 float64 = 4.2
+	d1 := decimal.NewFromFloat(num1).Add(decimal.NewFromFloat(num2))
+
+	fmt.Println(d1)
+
+	// 减法
+	d2 := decimal.NewFromFloat(num1).Sub(decimal.NewFromFloat(num2))
+
+	fmt.Println(d2)
+
+
+
+
+
+
+
 
 }
