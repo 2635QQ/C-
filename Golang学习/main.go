@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shopspring/decimal"
+	"strings"
 )
 
 // 定义变量
@@ -220,14 +220,11 @@ func main() {
 
 	// fmt.Println(int64(a1) + a2) // 把a1转换成64位
 
-
 	// var n1 int16 = 130
 
-	// fmt.Println(int8(n1))   // 
-
+	// fmt.Println(int8(n1))   //
 
 	//数字字面量语法  %d 表示10进制输出  %b 表示二进制输出
-
 
 	// num := 10
 
@@ -237,7 +234,7 @@ func main() {
 
 	// fmt.Printf("num=%b 二进制输出\n",num)   //二进制输出
 
-	// fmt.Printf("num=%o 八进制输出\n",num) 
+	// fmt.Printf("num=%o 八进制输出\n",num)
 
 	// fmt.Printf("num=%x 十六进制输出\n",num)
 
@@ -263,16 +260,131 @@ func main() {
 	// 这个包需要先进行下载 go get -u github.com/shopspring/decimal
 
 	// 使用加法运算；
-	var num1 float64 = 3.1
-	var num2 float64 = 4.2
-	d1 := decimal.NewFromFloat(num1).Add(decimal.NewFromFloat(num2))
+	// var num1 float64 = 3.1
+	// var num2 float64 = 4.2
+	// d1 := decimal.NewFromFloat(num1).Add(decimal.NewFromFloat(num2))
 
-	fmt.Println(d1)
+	// fmt.Println(d1)
 
-	// 减法
-	d2 := decimal.NewFromFloat(num1).Sub(decimal.NewFromFloat(num2))
+	// // 减法
+	// d2 := decimal.NewFromFloat(num1).Sub(decimal.NewFromFloat(num2))
 
-	fmt.Println(d2)
+	// fmt.Println(d2)
+
+	// var flag = true
+	// fmt.Printf("%v---%T\n", flag, !flag)
+
+	// var b bool   //布尔类型默认是false
+	// fmt.Printf("%v----%T\n",b,b)
+
+	// //string 类型默认值也是 空
+	// var a string
+	// fmt.Printf("%v",a)
+
+	// //int 类型默认值为0,float 类型默认是0
+
+	// //布尔类型无法参与数值运算，也无法与其他类型进行转换；
+
+	//关于字符串
+	// var str1 string
+	// var str2 = "hello"
+	// str3 := "world"
+
+	// fmt.Printf("%v--- %v----- %v\n", str1, str2, str3)
+
+	// fmt.Printf("%T--- %T----- %T\n", str1, str2, str3)
+
+	//字符串转义字符
+	// str1 := "this \nis str"
+
+	// fmt.Println(str1)
+
+	// str2 := "C:\\Golang\\go.exe"
+	// fmt.Println(str2)   //输出\ ，要用转义字符输出 \\
+
+	// str3 := "C:GO\"bin"
+
+	// fmt.Println(str3)
+
+	//一次定义多行字符串，要用反引号，```
+	// str1 := `this is str
+	// line2  is str
+	// line3 str
+	// `
+	// fmt.Println(str1)
+
+	// len (str) 求长度
+	// var str1 ="Nihao"
+	// fmt.Println(len(str1))
+	
+	// var str2 ="你好"
+	// fmt.Println(len(str2))  //中文占3个字节
+	//拼接字符串 可以用 +  或者 fmt.Sprintf 拼接字符串
+
+	// str1 :="hello"
+	// str2 :="你好"
+	// fmt.Println(str1 + str2)
+	// str3 := fmt.Sprintf("%v  %v",str1, str2)
+	// fmt.Println(str3)
+
+	//string.Split 分割字符串   strings 需要引入strings包
+	// var str1 = "123-456"
+	// arr := strings.Split(str1,"-")
+
+	// fmt.Println(arr)  
+
+	// // stings.Join  把切片连接成字符串
+	// str2 := strings.Join(arr,"*")  // 第一个参数是要拼接的数组，或者切片，第二个是* ，用来拼接的字符串
+	
+	// fmt.Println(str2)
+
+	// array := []string{"aa","java","golang"}
+	// fmt.Println(array)
+
+	// str3 := strings.Join(array,"-")
+
+	// fmt.Println(str3)
+
+	// strings.contains  判断是否包含某个字符串
+
+	// str1 := "this is str"
+	// str2 := "this"
+
+	// flag := strings.Contains(str1,str2) //判断str1 是否包含 str2
+
+	// fmt.Println(flag) 
+
+	// strings.HasPrefix, strings.HasSuffix   前缀/后缀判断
+
+	// str1 := "this is str"
+	// str2 := "this"
+	// flag := strings.HasPrefix(str1,str2) //前缀判断，是有的；
+	// fmt.Println(flag)
+
+	// // 后缀判断
+	// str3 := "str"
+	// flag2 := strings.HasSuffix(str1,str3)
+	// fmt.Println(flag2)
+
+	//查找字串出现的位置，  strings.Index() , strings.LastIndex()
+	str1 := "this is str"
+	str2 := "is"
+
+	num := strings.Index(str1,str2) 
+	fmt.Println(num)
+	num2 := strings.LastIndex(str1,str2)
+
+	fmt.Println(num2)
+
+
+
+
+
+
+
+
+
+
 
 
 
