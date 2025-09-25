@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	
 )
 
 // 定义变量
@@ -366,15 +366,41 @@ func main() {
 	// flag2 := strings.HasSuffix(str1,str3)
 	// fmt.Println(flag2)
 
-	//查找字串出现的位置，  strings.Index() , strings.LastIndex()
-	str1 := "this is str"
-	str2 := "is"
+	// //查找字串出现的位置，  strings.Index() , strings.LastIndex()
+	// str1 := "this is str"
+	// str2 := "is"
 
-	num := strings.Index(str1,str2) 
-	fmt.Println(num)
-	num2 := strings.LastIndex(str1,str2)
+	// num := strings.Index(str1,str2) 
+	// fmt.Println(num)
+	// num2 := strings.LastIndex(str1,str2)
 
-	fmt.Println(num2)
+	// fmt.Println(num2)
+
+	// 字符类型的，通过遍历字符串元素获得字符；
+	// var a = 'a'   //golang 中定义字符，字符属于int 类型
+
+	// fmt.Printf("值： %v  类型：%T ",a,a) 
+
+	// 也就是直接输出byte 字符 的时候，输出的是这个字符对应的码值
+
+	// 如果需要原样输出字符，就是用%c 
+	// fmt.Printf("值： %c  类型 ： %T",a,a)
+
+	//定义 字符串，输出字符串内容
+
+	// var str ="this"
+
+	// fmt.Printf("值： %v   原样输出 %c,类型 %T",str[2],str[2],str[2])
+
+	//unsafe 没法查看string 类型数据所占用的存储空间
+
+	// fmt.Println(len(str))
+
+	var a ='国'
+	fmt.Printf("值：%v   类型：%T",a,a)
+	
+
+
 
 
 
