@@ -2,16 +2,21 @@ package main
 
 import (
 	"fmt"
-	
 )
 
 // 定义变量
 
-func getUserinfo() (string, int) {
-	return "张三", 18
+// func getUserinfo() (string, int) {
+// 	return "张三", 18
+// }
+
+//定义一个方法
+func test() bool{
+	fmt.Println("test...")
+	return true
 }
 
-var g = "全局变量" //全局变量
+// var g = "全局变量" //全局变量
 func main() {
 	// fmt.Println("Hello, World!")//自带换行
 	// fmt.Print("Hello, World!	Hello, World!") //不换行
@@ -457,54 +462,74 @@ func main() {
 	// 第二种，通过 strconv 包进行转换，需要进入 strconv 包  "strconv"
 
 	/*
-	
-	var i int = 23
-	str := strconv.FormatInt(int64(i),10)
-	fmt.Printf("值：%v 类型 ：%T\n",str,str)
 
-	var f float32 = 29.8
-	str2 := strconv.FormatFloat(float64(f),'f',2,64)
-	fmt.Printf("值： %v ， 类型 %T ",str2,str2)
+		var i int = 23
+		str := strconv.FormatInt(int64(i),10)
+		fmt.Printf("值：%v 类型 ：%T\n",str,str)
 
-	var t bool = false    // 但是这个意义不大
-	str3 := strconv.FormatBool(t)
-	fmt.Printf("值：%v 类型 ：%T\n",str3,str3)
+		var f float32 = 29.8
+		str2 := strconv.FormatFloat(float64(f),'f',2,64)
+		fmt.Printf("值： %v ， 类型 %T ",str2,str2)
+
+		var t bool = false    // 但是这个意义不大
+		str3 := strconv.FormatBool(t)
+		fmt.Printf("值：%v 类型 ：%T\n",str3,str3)
 
 
-	a := 'a'
-	str4 := strconv.FormatUint(uint64(a),10)  // 表示以10进制格式化输出
-	fmt.Printf("值：%v 类型 ：%T\n",str4,str4)
+		a := 'a'
+		str4 := strconv.FormatUint(uint64(a),10)  // 表示以10进制格式化输出
+		fmt.Printf("值：%v 类型 ：%T\n",str4,str4)
 	*/
 
 	/*
-	
-	// 将 string 类型转换为 数值类型  首先是整型
-	str := "12345"
-	fmt.Printf("%v -- %T",str,str)
 
-	// 还可以使用 strconv 包进行 ParseInt 转换
-	num, _:= strconv.ParseInt(str,10,64)
-	fmt.Printf("%v -- %T",num ,num)
+		// 将 string 类型转换为 数值类型  首先是整型
+		str := "12345"
+		fmt.Printf("%v -- %T",str,str)
 
-	num2 , _ := strconv.ParseFloat(str,64) // 转换为 Float 类型
-	fmt.Printf("%v  -- %T",num2,num2)
+		// 还可以使用 strconv 包进行 ParseInt 转换
+		num, _:= strconv.ParseInt(str,10,64)
+		fmt.Printf("%v -- %T",num ,num)
+
+		num2 , _ := strconv.ParseFloat(str,64) // 转换为 Float 类型
+		fmt.Printf("%v  -- %T",num2,num2)
 
 	*/
 
-	// 算数运算符  + - * /
-	var a = 2
-	var b = 8
-	fmt.Println(a+b)
+	// // 算数运算符  + - * /
+	// var a = 2
+	// var b = 8
+	// fmt.Println(a+b)
 
-	// 对于除法运算， 如果运算的都是整数，那么在运算的时候，会去掉小数部分,保留整数部分
+	// // 对于除法运算， 如果运算的都是整数，那么在运算的时候，会去掉小数部分,保留整数部分
 
-	var c = 10 
-	var d = 3
-	fmt.Println(c/d)
+	// var c = 10
+	// var d = 3
+	// fmt.Println(c/d)
 
-	// 取余运算 ，余数 = 被除数 - （被除数/除数）*除数
-	fmt.Println(c%d)
-	fmt.Println(-10 % 3)   // -10 -(10/3)*3 
+	// // 取余运算 ，余数 = 被除数 - （被除数/除数）*除数
+	// fmt.Println(c%d)
+	// fmt.Println(-10 % 3)   // -10 -(-10/3)*3 结果-1
+
+	// fmt.Println(10 % -3)
+	// goLang 中的自增。自减运算符，只能单独使用；不能和赋值运算符一起用
+
+	//正确的写法
+	// var a = 12
+	// a++
+	// fmt.Println(a)
+
+	//逻辑运算符
+	// && AND 与运算符，如果两边的操作数都是true ，那就是true ,否则为false
+	// // || OR 或运算符，如果两边的操作数有一个True , 则为true，否则为false
+	// // ! 逻辑NOT 运算符，如果条件为true ,则为false , 
+
+	// //逻辑与和逻辑或 短路
+	// var a = 10
+	// if a > 9 && test(){
+	// 	fmt.Println("执行")
+
+	// }
 
 
 
