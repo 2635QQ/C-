@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	
+	"strconv"
 )
 
 // 定义变量
@@ -316,7 +316,7 @@ func main() {
 	// len (str) 求长度
 	// var str1 ="Nihao"
 	// fmt.Println(len(str1))
-	
+
 	// var str2 ="你好"
 	// fmt.Println(len(str2))  //中文占3个字节
 	//拼接字符串 可以用 +  或者 fmt.Sprintf 拼接字符串
@@ -331,11 +331,11 @@ func main() {
 	// var str1 = "123-456"
 	// arr := strings.Split(str1,"-")
 
-	// fmt.Println(arr)  
+	// fmt.Println(arr)
 
 	// // stings.Join  把切片连接成字符串
 	// str2 := strings.Join(arr,"*")  // 第一个参数是要拼接的数组，或者切片，第二个是* ，用来拼接的字符串
-	
+
 	// fmt.Println(str2)
 
 	// array := []string{"aa","java","golang"}
@@ -352,7 +352,7 @@ func main() {
 
 	// flag := strings.Contains(str1,str2) //判断str1 是否包含 str2
 
-	// fmt.Println(flag) 
+	// fmt.Println(flag)
 
 	// strings.HasPrefix, strings.HasSuffix   前缀/后缀判断
 
@@ -370,7 +370,7 @@ func main() {
 	// str1 := "this is str"
 	// str2 := "is"
 
-	// num := strings.Index(str1,str2) 
+	// num := strings.Index(str1,str2)
 	// fmt.Println(num)
 	// num2 := strings.LastIndex(str1,str2)
 
@@ -379,11 +379,11 @@ func main() {
 	// 字符类型的，通过遍历字符串元素获得字符；
 	// var a = 'a'   //golang 中定义字符，字符属于int 类型
 
-	// fmt.Printf("值： %v  类型：%T ",a,a) 
+	// fmt.Printf("值： %v  类型：%T ",a,a)
 
 	// 也就是直接输出byte 字符 的时候，输出的是这个字符对应的码值
 
-	// 如果需要原样输出字符，就是用%c 
+	// 如果需要原样输出字符，就是用%c
 	// fmt.Printf("值： %c  类型 ： %T",a,a)
 
 	//定义 字符串，输出字符串内容
@@ -396,25 +396,74 @@ func main() {
 
 	// fmt.Println(len(str))
 
-	var a ='国'
-	fmt.Printf("值：%v   类型：%T",a,a)
+	// var a ='国'
+	// fmt.Printf("值：%v   类型：%T\n",a,a)  // Unicode 编码 10进制,zhi :
+
+	// fmt.Printf("值： %c   类型 ：%T",a,a)  // 原样输出字符
+
+	// // 通过循环输出字符串里面的字符
+	// str := "你好 golang"
+	// for i:= 0; i < len(str); i++{   //for 循环相当于 byte 类型
+	// 	fmt.Printf("%v(%c)",str[i],str[i])
+	// }
+
+	// // range 循环相当于 rune 类型 还适合处理 UTF-8 类型
+	// s := "你好 golang"
+	// for _,v:= range s {  // 可以原样输出中文字符这种
+	// 	fmt.Printf("%v(%c)",v,v)
+	// }
+
+	// // 修改字符串
+	// s1 := " big"
+	// byteStr := []byte(s1) // 把字符串转换成 byte 数组
+	// byteStr[0] ='p'  // 然后进行修改
+	// fmt.Println(string(byteStr))  // 最后再强制转换为字符串
+
+	// s2 := "你好 golang"
+	// runeStr := []rune(s2)
+	// runeStr[0]= '我'
+	// fmt.Println(string(runeStr))
+
+	// var a int8 = 20
+	// var b int16 = 40
+	// fmt.Println(int16(a) + b)
+
+	// var a float32 = 20
+	// var b float64 = 40
+	// fmt.Println(float64(a) + b)
+
+	// Sprintf 拼接字符，还可以用来string转换
+
+	/*
+
+	   // Sprintf 可以将任何类型转换为字符串类型 string 类型
+	   	var i int = 22
+	   	str := fmt.Sprintf("%d",i)
+	   	fmt.Printf("值：%v 类型 ： %T\n",str,str)
+
+	   	var f float64 = 3.14
+	   	str2 := fmt.Sprintf("%f",f)
+	   	fmt.Printf("值：%v 类型 ： %T\n",str2, str2)
+
+	   	var  t bool = true
+	   	str3 := fmt.Sprintf("%t",t)
+	   	fmt.Printf("值 ：  %v 类型： %T\n",str3,str3)
+
+	   	var b byte = 'a'
+	   	str4 := fmt.Sprintf("%c",b)  //%c 原样输出
+	   	fmt.Printf("值： %v 类型 ： %T\n",str4,str4)
+	*/
+
+	// 第二种，通过 strconv 包进行转换，需要进入 strconv 包
+
+	var i int = 23
+	str := strconv.FormatInt(int64(i),10)
+	fmt.Printf("值：%v 类型 ：%T\n",str,str)
+
+	var f float32 = 29.8
+	str2 := strconv.FormatFloat(float64(f),'f',2,64)
+	fmt.Printf("值： %v ， 类型 %T ",str2,str2)
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
