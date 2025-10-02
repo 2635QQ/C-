@@ -10,8 +10,8 @@ import (
 // 	return "张三", 18
 // }
 
-//定义一个方法
-func test() bool{
+// 定义一个方法
+func test() bool {
 	fmt.Println("test...")
 	return true
 }
@@ -522,14 +522,199 @@ func main() {
 	//逻辑运算符
 	// && AND 与运算符，如果两边的操作数都是true ，那就是true ,否则为false
 	// // || OR 或运算符，如果两边的操作数有一个True , 则为true，否则为false
-	// // ! 逻辑NOT 运算符，如果条件为true ,则为false , 
+	// // ! 逻辑NOT 运算符，如果条件为true ,则为false ,
 
 	// //逻辑与和逻辑或 短路
 	// var a = 10
 	// if a > 9 && test(){
 	// 	fmt.Println("执行")
+	// }
+
+	// // 交换a 和 b 的值;
+	// var a = 34
+	// var b = 10
+	// t:= a
+	// a = b
+	// b = t
+
+	// fmt.Printf(" a   的值 %v， b 的值 %v",a,b)
+
+	// // 交换 a  和  b ,要求不能使用中间变量
+	// var a = 32
+	// var b = 12
+	// a = a+b   // a = 32 + 12
+	// b = a-b   // b= 32+12 -12 = 32
+
+	// a = a-b  // (32+12)-32 = 12 ;// 这样就实现了交换
+	// fmt.Printf("a=%v b=%v",a,b)
+
+	// //  如果还有100天放假，是 xx 个星期 零xx 天
+	// var days = 100
+	// var week = days/7
+	// var day = days%7
+	// fmt.Printf("days = %v  week = %v  day = %v ",days, week,day)
+
+	// 定义一个变量保存华氏温度，华氏温度转换摄氏温度的公式为：
+	// C = ( F-32 ) 除以 1.8,摄氏温度 （°C），华氏温度（°F），请求出华氏温度对应的摄氏温度
+
+	// var F float32 = 100  // 华氏温度  这里需要注意的是，因为有除法，所以这个类型是定义成float 类型
+	// C := (F-32)/1.8
+	// fmt.Printf("转换后的摄氏温度为：C %v",C)
+
+	// var a = 5 // 101
+	// var b = 2 // 010
+
+	// fmt.Println("a&b= ", a&b) // 000
+
+	// fmt.Println("a|b=", a|b) // 111 值7
+
+	// fmt.Println("a^b=", a^b) // 异或，有些不一样，则为1
+
+	// fmt.Println("a<<b=", a<<b) // 10100   左移两位，在后面补0   值20
+	// // 这个左移，其实也是 5* 2 的2次方，左移n 位就是乘以2 的n 次方
+
+	// fmt.Println("a>>b= ",a>>b)  // 5/2 的2次方  值1
+
+	//  flag := true
+
+	//  if flag {
+	// 	fmt.Println("flag = true")
+	//  }
+
+	// age := 30  // 这个age  是当前区域内部的全局变量
+	// if age > 20 {
+	// 	fmt.Println("成年人",age)
+	// }
+	// fmt.Println(age)
+
+	// // if 语句的另一种写法
+	// if age := 34; age > 20{   // 而这个if 是当前区域的局部变量
+	// 	fmt.Println("是成年人", age)
+	// }
+
+	// 练习一个成绩等级的；  成绩大于90 输出A， 小于90 大于75 输出B，否则输出C
+
+	// var socores = 93
+	// if socores > 90{
+	// 	fmt.Println("成绩大于90， A")
+	// } else if socores >75{
+	// 	fmt.Println("成绩为B")
+	// }else{
+	// 	fmt.Println("C")
+	// }
+
+	// //  求两个数的最大值
+	// var a = 34
+	// var b = 24
+	// var max int
+	// if a>b {
+	// 	max = a
+	// 	fmt.Println("最大值为 max ",max)
+	// }else {
+	// 	max = b
+	// 	fmt.Println("最大值为 max ",max)
+	// }
+
+	// // for 循环练习
+	// for i := 1; i <= 10; i++ {
+	// 	fmt.Println(i)
 
 	// }
+	// 写 for 循环的时候要注意死循环
+	// i := 1
+	// for i <= 10 {
+	// 	fmt.Println(i)
+	// 	i++   // 因为上面没有写结束语句，所以这个在里面写上结束语句
+	// }
+
+	// i := 1   // 无限循环模式下，也就是没有初始语句，没有判断条件，没有结束语句
+	// for {
+	// 	if i<= 10{
+	// 		fmt.Println(i)
+	// 	}else{
+	// 		break   // 使用 break 跳出循环；
+	// 	}
+	// 	i++  // 执行完上面的if 语句之后，加 1 
+	// }
+	// // 且 Go 中没有 while 语句，可以使用for 循环代替， 
+	// // for 条件{ 循环体语句}
+
+	// // 1、练习 ： 打印0-50 所有的偶数
+	//  i := 0
+	//  for ; i<=50 ;i++{
+	// 	if i%2==0{
+	// 		fmt.Println(i)
+	// 	} 
+	//  }
+
+	// // 2、练习；求 1+2+3+4....+100 的和
+	// i := 1
+	// sum :=0;  // sum 定义在外面
+	// for ; i<=100;i++{
+	// 	sum +=i;	
+	// }
+	// fmt.Println("总和为%v :",sum)  // 可以放到外面，那么打印就是打印一次了
+
+	// // 3、练习： 打印 1~100 之间所有是 9 的倍数的整数的个数及总和
+	// i := 1
+	// count := 0
+	// sum := 0
+	// for ; i<= 100 ;i++{
+	// 	if i%9 == 0{
+	// 		count +=1;
+	// 		sum += i;
+	// 	}
+	// }
+	// fmt.Printf("之间是9的倍数的整数个数有 %v 个, 其整数之和为%v,",count,sum)
+
+	// // 4、 计算5 的阶乘
+	// i:=1
+	// res := 1
+	// for ; i<=5;i++{
+
+	// 	res *= i
+	// }
+	// fmt.Println(res)
+
+	// // 打印一个矩形 下面是一种方法 ； 但还可以用for循环的嵌套；
+	// for i := 1; i<= 12; i++{
+	// 	fmt.Printf("*")
+	// 	if i% 4== 0{
+	// 		fmt.Println("")  // 是4的倍数的时候，打印一个换行
+	// 	}
+	// }
+
+	// // for 循环的嵌套
+
+	// var row = 3
+	// var column = 3
+
+	// for i := 0; i< row; i++{  // 这个是行
+	// 	for j := 0; j < column;j++{   // 这个是列
+	// 		fmt.Print("*")
+	// 	}
+	// 	fmt.Println("")
+	// }
+
+	// // for 循环打印一个三角形
+	// var row = 5
+	// for i:=0;i<row ; i++{
+	// 	for j := 1;j<= i;j++{
+	// 		fmt.Print("*")
+	// 	}
+	// 	fmt.Println("")  // 控制打印5行
+	// }
+
+	// 练习： 打印出9*9 乘法表
+	var row =9
+
+	for i:=1;i<=row;i++{
+		for j:=1;j<=i;j++{
+			fmt.Printf("%v*%v = %v ",j,i,i*j)
+		}
+		fmt.Println("")
+	}
+	
 
 
 
