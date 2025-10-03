@@ -634,9 +634,9 @@ func main() {
 	// 	}else{
 	// 		break   // 使用 break 跳出循环；
 	// 	}
-	// 	i++  // 执行完上面的if 语句之后，加 1 
+	// 	i++  // 执行完上面的if 语句之后，加 1
 	// }
-	// // 且 Go 中没有 while 语句，可以使用for 循环代替， 
+	// // 且 Go 中没有 while 语句，可以使用for 循环代替，
 	// // for 条件{ 循环体语句}
 
 	// // 1、练习 ： 打印0-50 所有的偶数
@@ -644,14 +644,14 @@ func main() {
 	//  for ; i<=50 ;i++{
 	// 	if i%2==0{
 	// 		fmt.Println(i)
-	// 	} 
+	// 	}
 	//  }
 
 	// // 2、练习；求 1+2+3+4....+100 的和
 	// i := 1
 	// sum :=0;  // sum 定义在外面
 	// for ; i<=100;i++{
-	// 	sum +=i;	
+	// 	sum +=i;
 	// }
 	// fmt.Println("总和为%v :",sum)  // 可以放到外面，那么打印就是打印一次了
 
@@ -705,18 +705,268 @@ func main() {
 	// 	fmt.Println("")  // 控制打印5行
 	// }
 
-	// 练习： 打印出9*9 乘法表
-	var row =9
+	// // 练习： 打印出9*9 乘法表
+	// var row =9
 
-	for i:=1;i<=row;i++{
-		for j:=1;j<=i;j++{
-			fmt.Printf("%v*%v = %v ",j,i,i*j)
-		}
-		fmt.Println("")
+	// for i:=1;i<=row;i++{
+	// 	for j:=1;j<=i;j++{
+	// 		fmt.Printf("%v*%v = %v ",j,i,i*j)
+	// 	}
+	// 	fmt.Println("")
+	// }
+
+	// // 打印字符串里面的内容，依次输出
+	// var str ="你好，golang!"
+	// for k,v := range str {
+	// 	// fmt.Println("key= ",k,"val=",v)
+	// 	fmt.Printf("key= %v, val= %c\n",k,v)  //要以字符输出，也就是%c
+
+	// }
+	// var arr = []string{"ahp","java","nodejs","golang"}
+	// for i:=0;i<len(arr);i++{
+	// 	fmt.Println(arr[i])
+	// }
+	// var arr = []string{"ahp","java","nodejs","golang"}
+	// for k , val := range arr{
+	// 	fmt.Println(val)
+	// 	fmt.Println("key=",k)
+	// }
+
+	// 练习： 判断文件类型，如果后缀名是.html ,输入 text/html,
+	// 如果后缀名 .css 输出 text/css ，
+	// var extname = ".html"
+	// switch extname {
+	// case ".html":
+	// 	fmt.Println("text/html")
+	// 	break
+	// case ".css":
+	// 	fmt.Println("text/css")
+	// 	break
+	// case "js":
+	// 	fmt.Println("text/javascript")
+	//     break
+	// default:
+	// 	fmt.Println("找不到此后缀")
+	// }
+
+	// // 同时，这个变量的定义还可以放在 switch 里面进行定义
+	// switch extname := ".html"; extname {
+	// case ".html":
+	// 	fmt.Println("text/html")
+	// 	break
+	// }
+
+	// //一个分支可以有多个值，多个case 值中间使用英文逗号分隔
+	// var n = 5
+	// switch n {
+	// case 1, 3, 5, 7, 9:
+	// 	fmt.Println("这是奇数")
+	// 	break
+	// case 2, 4, 6, 8:
+	// 	fmt.Println("偶数")
+	// 	break
+	// }
+
+	// // case 使用分支语句进行 判断
+	// var age = 30
+	// switch {
+	// case age < 24:   // 如果分支上使用的是表达式，那么switch后面不需要跟变量
+	// 	fmt.Println("好好学习")
+	// case age >= 24 && age <= 68:
+	// 	fmt.Println("好好赚钱")
+	// default :
+	// fmt.Println("输入错误")
+	// }
+
+	// 
+	// var age = 30
+	// switch {
+	// case age < 24:
+	// 	fmt.Println("好好学习")
+	// case age >= 24 && age <= 60:
+	// 	fmt.Println("好好赚钱")
+	// 	fallthrough
+	// case age >60:
+	// 	fmt.Println("注意身体")
+	// default:
+	// 	fmt.Println("输入错误")
+	// }
+
+	// // 1、表示当i = 2 的时候跳出当前循环
+	// for i:= 1;i<=10;i++{
+	// 	if i==2{
+	// 		break  // 这个break 只是跳出当前循环
+	// 	}
+	// 	fmt.Println(i)
+	// }
+	// fmt.Println("继续执行下一步")
+
+	// 
+	// for i:=0;i<2;i++{
+	// 	for j:= 0;j<10;j++{
+	// 		if j == 3{
+	// 			break  // 其实是会跳出当前循环，这里层的for 循环不会被打印
+	// 		}
+	// 		fmt.Printf("i=%v j=%v\n",i,j)
+	// 	}
+	// 	// 直接跳出循环之后，进入到下一步，也就是执行下一轮的循环，因为这个里面没有其他句子了
+	// }
+
+	// label:
+	// for i:=0;i<2;i++{
+	// 	for j:= 0;j<10;j++{
+	// 		if j == 3{
+	// 			break label // 其实是会跳出当前循环，这里层的for 循环不会被打印
+	// 		}
+	// 		fmt.Printf("i=%v j=%v\n",i,j)
+	// 	}
+	// 	// 直接跳出循环之后，进入到下一步，也就是执行下一轮的循环，因为这个里面没有其他句子了
+	// }
+
+	// continue 语句可以结束当前循环，开始下一次的循环迭代过程，仅限在for 循环内使用
+	// for i:=1;i<= 10;i++{
+	// 	if i==3{
+	// 		continue           //break  的时候，到 1 2 ；跳出当前循环
+	// 	      //  而这个 continue 语句跳过当前循环，然后继续向下一轮的循环执行；所以没有打印3
+	// 		  //  在跳过3之后，执行下一轮的需要执行的语句
+	// 	}
+	// 	fmt.Println(i)
+	// }
+
+	// continue 和 label 标签的一个配合使用
+	// label2:
+	// for i:=0;i<2; i++{
+	// 	for j:=0;j< 10;j++{
+	// 		if j==3 {
+	// 			continue label2
+	// 		}
+	// 		fmt.Printf("i=%v j=%v\n",i,j)
+	// 	}
+	// }
+// 数组
+	// var arr1 [3]int 
+
+	// var arr2 [4]int
+
+	// var strArr [3]string
+
+	// // 查看一下数组的类型
+	// fmt.Printf("arr1:%T  arr2%T  atrArr:%T",arr1,arr2,strArr)
+
+	// 数组的初始化 ：第一种方法； 声明数组
+	// var arr1 [3]int
+	// fmt.Println(arr1)
+
+	// arr1[0]= 22
+	// arr1[1] = 10
+	// arr1[2]= 24
+
+	// fmt.Println(arr1)
+
+	// 数组的初始化 第二种方法：
+	// var arr1 = [3]int{23,34,5}
+	// fmt.Println(arr1)
+
+	// // 让其自行推断长度
+	// var arr1= [...]int{12,4354,656,333333336,
+	// }
+	// fmt.Println(len(arr1))
+
+
+	// // 第四种方式 指定下标给数组，索引值的方式，用到的可能不是特别多
+	// arr := [...]int {0:1,1:10,2:27,5:56}
+	// fmt.Println(len(arr))
+
+	// fmt.Println(arr)
+
+	// // 数组的循环遍历  for for range
+	// var arr = [3]int {23,34,5}
+	// for i:=0;i<len(arr);i++{
+	// 	fmt.Println(arr[i])
+	// }
+
+	// arr1 := [...]string{"php","nodejs","golang","js"}
+	// for k,v := range arr1{
+	// 	fmt.Printf("key:%v value:%v\n",k,v)
+
+	// }
+
+	// // 1、 求出一个数组里面元素的和以及这些元素的平均值，分别用for 和 for -range 实现
+	// var arr = [...] int {32 ,12,45,5}
+	// var sum = 0 
+	// for i:=0;i< len(arr);i++{
+	// 	sum += arr[i]
+	// }
+	// // fmt.Println("数组的和 ",sum)
+	// fmt.Printf("arr 数组元素的和是：%v 平均值：%.2f",sum,float64(sum)/float64(len(arr)))
+
+	// 请求出一个数组的最大值 ，并得到对应的下标
+
+	// var arr = [...]int {1,12,25,65,11}
+
+	// var max = arr[0]
+	// var index = 0
+
+	// for i:=0;i<len(arr);i++{
+	// 	if arr[i]>max{
+	// 		max=arr[i]
+	// 		index = i
+	// 	}
+	// }
+	// fmt.Printf("最大值：%v , 最大值对应的索引值%v ",max,index)
+
+	// // 从数组中 找出和为8 的两个元素的下标；
+	// var arr = [...]int{1,3,5,7,8}
+	// for i:=0;i<len(arr);i++{
+	// 	for j:=i+1;j<len(arr);j++{
+	// 		if arr[i] + arr[j] == 8{
+	// 			fmt.Printf("(%v,%v)",i,j)
+	// 		}
+	// 	}
+	// }
+
+	//数组的值类型和引用类型; 下面这种能够将arr1 拷贝给arr2 的是数值类型
+	// var arr1 = [...]int{1,2,4}
+	// arr2 := arr1
+	// fmt.Println(arr1,arr2)
+	// arr1[0]=13
+	// fmt.Println(arr1,arr2)
+
+	//引用类型： 切片 定义的时候 【】 里面是空的表示不指定数组的长度
+	// var arr1 = []int {1,2,3}
+	// arr2 := arr1
+	// arr1[0]=11
+	// fmt.Println(arr1,arr2)
+
+	// 多维数组 var arr = [3]int{1,2,3}  一维数组
+	var arr = [3][2]string{
+		{"北京","上海"},
+		{"广州","深圳"},
+		{"成都","重庆"},
 	}
-	
+	fmt.Println(arr[0])
 
 
+	// 循环遍历数组
+	for _, v1:=range arr{
+		for _,v2 := range v1{
+			fmt.Println(v2)
+		}
+	}
+
+	// 或者使用两层for 循环
+	for i:=0;i<len(arr);i++{
+		for j:=0;j<len(arr[i]);j++{
+			fmt.Println(arr[i][j])
+		}
+	}
+
+	// 支持数组推导的方式，
+	var arr1 = [...][2]string{
+		{"北京","上海"},
+		{"广州","深圳"},
+	}
+	fmt.Println(arr1)
 
 
 
